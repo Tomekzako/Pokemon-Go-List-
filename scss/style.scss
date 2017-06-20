@@ -95,6 +95,7 @@ section {
         padding: 10px;
         .card {
             &:hover {
+                cursor: pointer;
                 background-color: #563030;
             }
             background-color: #7d4848;
@@ -153,11 +154,20 @@ section {
         @extend .grassBtn;
         background-color: green;
     }
+    .normalBtn {
+        @extend .grassBtn;
+        background-color: dimgray;
+    }
+    .flyingBtn {
+        @extend .grassBtn;
+        background: linear-gradient(#03a9f4 50%, #b9b4b4 50%);
+    }
     .hp {
         color: #fff;
         font-weight: 900;
         margin-top: 50px;
         text-align: center;
+        letter-spacing: 2px;
     }
     .weight {
         @extend .hp;
@@ -219,5 +229,68 @@ section {
     100% {
         -webkit-transform: translateX(0);
         transform: translateX(0);
+    }
+}
+
+.fullScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-image: url(../images/Plain-design-pattern-dark-background-image-HD-resolution-latest-pack.jpg);
+    .newContainer {
+        max-width: 800px;
+        margin: 50px auto 0;
+        width: 100%;
+        border: 3px solid red;
+        background: bisque;
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            color: chocolate;
+            padding: 20px 0;
+        }
+    }
+    .mainImg {
+        height: 400px;
+    }
+    a {
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .btn {
+        .btn-red {
+            background-color: #E48681;
+            border-color: rgba(0, 0, 0, 0.3);
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+            color: #FFF;
+        }
+        &:hover {
+            background-color: #DA4F49;
+            border-color: rgba(0, 0, 0, 0.5);
+        }
+        &:active {
+            background-color: red;
+            border-color: rgba(0, 0, 0, 0.9);
+        }
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 12px;
+        padding: 10px 30px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-bottom-width: 3px;
+        background-color: #E48681;
+        border-color: rgba(0, 0, 0, 0.3);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+        color: #FFF;
+        display: block;
+        width: 110px;
+        text-align: center;
+        margin: 20px auto;
     }
 }
