@@ -12,7 +12,7 @@ $(function () {
     let $col5 = $('.col5');
     let $card = $('.card');
 
-/* Pokemons NAME */
+    /* Pokemons NAME */
     let $bulb = $('.bulb');
     let $charm = $('.charm');
     let $squirtle = $('.squirtle');
@@ -20,7 +20,7 @@ $(function () {
     let $weedle = $('.weedle');
     let $pidgey = $('.pidgey');
 
-/* Pokemons TYPE */
+    /* Pokemons TYPE */
     let $grass = $('.grassBtn');
     let $poison = $('.poisonBtn');
     let $fire = $('.fireBtn');
@@ -29,7 +29,7 @@ $(function () {
     let $normal = $('.normalBtn');
     let $flying = $('.flyingBtn');
 
- /* Pokemons HP */
+    /* Pokemons HP */
     let $bulb__hp = $('.bulb--hp');
     let $charm__hp = $('.charm--hp');
     let $squirtle__hp = $('.squirtle--hp');
@@ -37,17 +37,17 @@ $(function () {
     let $weedle__hp = $('.weedle--hp');
     let $pidgey__hp = $('.pidgey--hp');
 
-/* Pokemons WEIGHT */
+    /* Pokemons WEIGHT */
     let $bulb__weight = $('.bulb--weight');
     let $charm__weight = $('.charm--weight');
     let $squirtle__weight = $('.squirtle--weight');
     let $caterpie__weight = $('.caterpie--weight');
     let $weedle__weight = $('.weedle--weight');
-    let $pidgey__weight = $('.pidgey--weight');  
-    
-    
-    
-/* First pokemon */
+    let $pidgey__weight = $('.pidgey--weight');
+
+
+
+    /* First pokemon */
     $.ajax({
 
 
@@ -59,39 +59,44 @@ $(function () {
         $poison.text(response.types[0].type.name);
         $bulb__hp.text("HP: " + response.stats[5].base_stat);
         $bulb__weight.text("WEIGHT: " + response.weight);
-        
-        function createDiv(data){
-        let $newDiv = $('<div>').addClass('fullScreen');
-        let $return = $('<a href="#">').text("Back").addClass("btn btn-red");
-        let $newContainer = $('<div>').addClass('newContainer');
-        let $row = $('<div>').addClass('row');
-        let $col12 = $('<div>').addClass('col-12');
-        let $col7 = $('<div>').addClass('col-7');
-        let $img = $('<img src="images/Bulbasaur.png">').addClass('mainImg');
-        let $col5 = $('<div>').addClass('col-5');
-        let $newH1 = $('<h1>').text(response.name);  
-        $('body').append($newDiv);
-        $newDiv.append($newContainer);
-        $newDiv.append($return);
-        $newContainer.append($row);
-        $row.append($col12);
-        $col12.append($newH1);
-        $row.append($col7);
-        $col7.append($img);
-        $row.append($col5);
-    }
-        
-        $card.on('click', function(){
-        createDiv();
-    })
-        
+
+        function createDiv(data) {
+            let $newDiv = $('<div>').addClass('fullScreen');
+            let $return = $('<a href="#">').text("Back").addClass("btn btn-red");
+            let $newContainer = $('<div>').addClass('newContainer');
+            let $row = $('<div>').addClass('row');
+            let $col12 = $('<div>').addClass('col-12');
+            let $col7 = $('<div>').addClass('col-7');
+            let $img = $('<img src="images/Bulbasaur.png">').addClass('mainImg');
+            let $col5 = $('<div>').addClass('col-5');
+            let $newH1 = $('<h1>').text(response.name);
+            $('body').append($newDiv);
+            $newDiv.append($newContainer);
+            $newDiv.append($return);
+            $newContainer.append($row);
+            $row.append($col12);
+            $col12.append($newH1);
+            $row.append($col7);
+            $col7.append($img);
+            $row.append($col5);
+
+
+            $return.on('click', function () {
+                $newDiv.remove();
+            })
+        }
+
+        $card.on('click', function () {
+            createDiv();
+        })
+
     }).fail(function (error) {
         console.log(error);
     });
 
 
 
-/* Second pokemon */
+    /* Second pokemon */
     $.ajax({
 
 
@@ -107,7 +112,7 @@ $(function () {
     });
 
 
-/* Third pokemon */
+    /* Third pokemon */
     $.ajax({
 
 
@@ -123,7 +128,7 @@ $(function () {
     });
 
 
-/* Fourth pokemon */
+    /* Fourth pokemon */
     $.ajax({
 
 
@@ -139,7 +144,7 @@ $(function () {
     });
 
 
-/* Fifth pokemon */
+    /* Fifth pokemon */
     $.ajax({
 
 
@@ -154,7 +159,7 @@ $(function () {
     }).fail(function (error) {
         console.log(error);
     });
-    
+
     /* Sixth pokemon */
     $.ajax({
 
