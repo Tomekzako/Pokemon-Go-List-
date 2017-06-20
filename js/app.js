@@ -92,9 +92,15 @@ $(function () {
         $bulb__hp.text("HP: " + response.stats[5].base_stat);
         $bulb__weight.text("WEIGHT: " + response.weight);
 
+
         $card.first().on('click', function () {
             $('.fullScreen').css('display', 'block');
             $newH1.text(response.name);
+            $('.height').text("HEIGHT: " + response.height);
+            $('.newContainer__weight').text("WEIGHT: " + response.weight);
+            $('.newContainer__abilities').text("ABILITIES: " + response.abilities[0].ability.name + " " + response.abilities[1].ability.name);
+            $('.newContainer__type a').addClass("poisonBtn").text(response.types[0].type.name);
+            $('.newContainer__type--sec a').addClass("grassBtn").text(response.types[1].type.name);
             setImg("images/Bulbasaur.png");
         });
 
@@ -120,6 +126,7 @@ $(function () {
         $(".card:eq( 1 )").first().on('click', function () {
             $('.fullScreen').css('display', 'block');
             $newH1.text(ans.name);
+            $('.height').text("HEIGHT: " + ans.height);
             setImg("images/charmander.png");
         });
 
