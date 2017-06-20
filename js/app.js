@@ -45,7 +45,39 @@ $(function () {
     let $weedle__weight = $('.weedle--weight');
     let $pidgey__weight = $('.pidgey--weight');
 
+    console.log($card);
 
+    let $img = $('<img>').addClass('mainImg');
+    $('.newContainer__col7').append($img);
+
+    function setImg(url) {
+        $img.attr("src", url);
+    }
+
+    setImg("images/Bulbasaur.png");
+
+    let $newH1 = $('<h1>');
+    $('.newContainer__col12').append($newH1);
+
+
+
+    let $return = $('<a href="#">').text("Back").addClass("btn btn-red");
+    $('.newContainer__btn').append($return);
+
+
+    $card.first().on('click', function () {
+        $('.fullScreen').css('display', 'block');
+
+    });
+
+    $(".card:eq( 1 )").first().on('click', function () {
+        $('.fullScreen').css('display', 'block');
+
+    });
+
+    $return.on('click', function () {
+        $('.fullScreen').css('display', 'none');
+    })
 
     /* First pokemon */
     $.ajax({
@@ -60,35 +92,11 @@ $(function () {
         $bulb__hp.text("HP: " + response.stats[5].base_stat);
         $bulb__weight.text("WEIGHT: " + response.weight);
 
-        function createDiv(data) {
-            let $newDiv = $('<div>').addClass('fullScreen');
-            let $return = $('<a href="#">').text("Back").addClass("btn btn-red");
-            let $newContainer = $('<div>').addClass('newContainer');
-            let $row = $('<div>').addClass('row');
-            let $col12 = $('<div>').addClass('col-12');
-            let $col7 = $('<div>').addClass('col-7');
-            let $img = $('<img src="images/Bulbasaur.png">').addClass('mainImg');
-            let $col5 = $('<div>').addClass('col-5');
-            let $newH1 = $('<h1>').text(response.name);
-            $('body').append($newDiv);
-            $newDiv.append($newContainer);
-            $newDiv.append($return);
-            $newContainer.append($row);
-            $row.append($col12);
-            $col12.append($newH1);
-            $row.append($col7);
-            $col7.append($img);
-            $row.append($col5);
-
-
-            $return.on('click', function () {
-                $newDiv.remove();
-            })
-        }
-
-        $card.on('click', function () {
-            createDiv();
-        })
+        $card.first().on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(response.name);
+            setImg("images/Bulbasaur.png");
+        });
 
     }).fail(function (error) {
         console.log(error);
@@ -101,12 +109,20 @@ $(function () {
 
 
         url: charmanderUrl
-    }).done(function (response) {
-        console.log(response);
-        $charm.text(response.name);
-        $fire.text(response.types[0].type.name);
-        $charm__hp.text("HP: " + response.stats[5].base_stat);
-        $charm__weight.text("WEIGHT: " + response.weight);
+    }).done(function (ans) {
+        console.log(ans);
+        $charm.text(ans.name);
+        $fire.text(ans.types[0].type.name);
+        $charm__hp.text("HP: " + ans.stats[5].base_stat);
+        $charm__weight.text("WEIGHT: " + ans.weight);
+        $newH1.text(ans.name);
+
+        $(".card:eq( 1 )").first().on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(ans.name);
+            setImg("images/charmander.png");
+        });
+
     }).fail(function (error) {
         console.log(error);
     });
