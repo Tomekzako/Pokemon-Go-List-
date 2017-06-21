@@ -20,7 +20,7 @@
 }
 
 $columnsCount: 12;
-$breakpoint: 420px;
+$breakpoint: 520px;
 @for $i from 1 through $columnsCount {
     .col-#{$i} {
         width: (100%/$columnsCount)*$i;
@@ -316,20 +316,18 @@ section {
         margin: 0 10px;
     }
     .btn {
-        .btn-red {
-            background-color: #E48681;
-            border-color: rgba(0, 0, 0, 0.3);
-            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-            color: #FFF;
-        }
         &:hover {
-            background-color: #DA4F49;
+            background-color: #7b0500;
             border-color: rgba(0, 0, 0, 0.5);
         }
         &:active {
-            background-color: red;
+            background-color: #820801;
             border-color: rgba(0, 0, 0, 0.9);
         }
+        background-color: #ef1004;
+        border-color: rgba(0, 0, 0, 0.3);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+        color: #FFF;
         display: inline-block;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -338,13 +336,34 @@ section {
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.3);
         border-bottom-width: 3px;
-        background-color: #E48681;
-        border-color: rgba(0, 0, 0, 0.3);
-        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-        color: #FFF;
         display: block;
         width: 110px;
         text-align: center;
         margin: 10px auto;
+    }
+}
+
+@media(max-width: $breakpoint){
+    body{
+        background-size: contain;
+    }
+    header{
+         img{
+        display: none;
+        }
+        h1{
+            font-size: 3rem;
+            text-align: center;
+        }
+    }
+    
+    section{
+        img{
+            height: 230px;
+            padding-top: 5px;
+        }
+        .col5{
+            display: none;
+        }
     }
 }
