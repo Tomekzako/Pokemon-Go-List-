@@ -100,7 +100,7 @@ section {
             }
             background-color: mediumseagreen;
             border: 10px solid maroon;
-            border-radius: 5px;
+            border-radius: 50px;
             height: 350px;
         }
         .col5 {
@@ -118,7 +118,7 @@ section {
         }
     }
     img {
-        width: 100%;
+        width: 95%;
         height: 250px;
         margin-left: 10px;
         padding-top: 10px;
@@ -141,6 +141,7 @@ section {
         display: block;
         margin: auto;
         text-align: center;
+        font-size: 20px;
     }
     .poisonBtn {
         @extend .grassBtn;
@@ -165,6 +166,14 @@ section {
     .flyingBtn {
         @extend .grassBtn;
         background: linear-gradient(#03a9f4 50%, #b9b4b4 50%);
+    }
+    .groundBtn {
+        @extend .grassBtn;
+        background: linear-gradient(#FFEB3B 50%, #84602c 50%);
+    }
+    .electricBtn {
+        @extend .grassBtn;
+        background-color: yellow;
     }
     .hp {
         color: #fff;
@@ -260,6 +269,7 @@ section {
         }
         a {
             width: 100%;
+            font-size: 15px;
         }
         .pad {
             padding-bottom: 5px;

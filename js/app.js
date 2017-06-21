@@ -6,6 +6,10 @@ $(function () {
     var caterpieUrl = 'http://pokeapi.co/api/v2/pokemon/10/';
     var weedleUrl = 'http://pokeapi.co/api/v2/pokemon/13/';
     var pidgeyUrl = 'http://pokeapi.co/api/v2/pokemon/16/';
+    var rattataUrl = 'http://pokeapi.co/api/v2/pokemon/19/';
+    var fearowUrl = 'http://pokeapi.co/api/v2/pokemon/22/';
+    var pikachuUrl = 'http://pokeapi.co/api/v2/pokemon/25/';
+    var sandslashUrl = 'http://pokeapi.co/api/v2/pokemon/28/';
 
 
     let $section__h1 = $('.section__h1');
@@ -19,6 +23,10 @@ $(function () {
     let $caterpie = $('.caterpie');
     let $weedle = $('.weedle');
     let $pidgey = $('.pidgey');
+    let $rattata = $('.rattata');
+    let $fearow = $('.fearow');
+    let $pikachu = $('.pikachu');
+    let $sandslash = $('.sandslash');
 
     /* Pokemons TYPE */
     let $grass = $('.grassBtn');
@@ -28,6 +36,8 @@ $(function () {
     let $bug = $('.bugBtn');
     let $normal = $('.normalBtn');
     let $flying = $('.flyingBtn');
+    let $electric = $('.electricBtn');
+    let $ground = $('.groundBtn');
 
     /* Pokemons HP */
     let $bulb__hp = $('.bulb--hp');
@@ -36,6 +46,10 @@ $(function () {
     let $caterpie__hp = $('.caterpie--hp');
     let $weedle__hp = $('.weedle--hp');
     let $pidgey__hp = $('.pidgey--hp');
+    let $rattata__hp = $('.rattata--hp');
+    let $fearow__hp = $('.fearow--hp');
+    let $pikachu__hp = $('.pikachu--hp');
+    let $sandslash__hp = $('.sandslash--hp');
 
     /* Pokemons WEIGHT */
     let $bulb__weight = $('.bulb--weight');
@@ -44,6 +58,10 @@ $(function () {
     let $caterpie__weight = $('.caterpie--weight');
     let $weedle__weight = $('.weedle--weight');
     let $pidgey__weight = $('.pidgey--weight');
+    let $rattata__weight = $('.rattata--weight');
+    let $fearow__weight = $('.fearow--weight');
+    let $pikachu__weight = $('.pikachu--weight');
+    let $sandslash__weight = $('.sandslash--weight');
 
     console.log($card);
 
@@ -134,9 +152,9 @@ $(function () {
         $(".card:eq( 1 )").first().on('click', function () {
             $('.fullScreen').css('display', 'block');
             $newH1.text(ans.name);
-            $('.height').text("HEIGHT: " + ans.height);
-            $('.newContainer__weight').text("WEIGHT: " + ans.weight);
-            $('.newContainer__abilities').text("ABILITIES: " + ans.abilities[0].ability.name + ", " + ans.abilities[1].ability.name);
+            $('.newContainer__height').text(ans.height);
+            $('.newContainer__weight').text(ans.weight);
+            $('.newContainer__abilities').text(ans.abilities[0].ability.name + ", " + ans.abilities[1].ability.name);
             $('.speed').text(ans.stats[0].base_stat);
             $('.special-defense').text(ans.stats[1].base_stat);
             $('.special-attack').text(ans.stats[2].base_stat);
@@ -157,12 +175,29 @@ $(function () {
 
 
         url: squirtleUrl
-    }).done(function (response) {
-        console.log(response);
-        $squirtle.text(response.name);
-        $water.text(response.types[0].type.name);
-        $squirtle__hp.text("HP: " + response.stats[5].base_stat);
-        $squirtle__weight.text("WEIGHT: " + response.weight);
+    }).done(function (ans) {
+        console.log(ans);
+        $squirtle.text(ans.name);
+        $water.text(ans.types[0].type.name);
+        $squirtle__hp.text("HP: " + ans.stats[5].base_stat);
+        $squirtle__weight.text("WEIGHT: " + ans.weight);
+        $newH1.text(ans.name);
+
+        $(".card:eq( 2 )").first().on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(ans.name);
+            $('.newContainer__height').text(ans.height);
+            $('.newContainer__weight').text(ans.weight);
+            $('.newContainer__abilities').text(ans.abilities[0].ability.name + ", " + ans.abilities[1].ability.name);
+            $('.speed').text(ans.stats[0].base_stat);
+            $('.special-defense').text(ans.stats[1].base_stat);
+            $('.special-attack').text(ans.stats[2].base_stat);
+            $('.defense').text(ans.stats[3].base_stat);
+            $('.attack').text(ans.stats[4].base_stat);
+            $('.stats__hp').text(ans.stats[5].base_stat);
+            $('.newContainer__type a').addClass("fireBtn").text(ans.types[0].type.name);
+            setImg("images/Squirtle.png");
+        });
     }).fail(function (error) {
         console.log(error);
     });
@@ -212,6 +247,68 @@ $(function () {
         $flying.text(response.types[1].type.name);
         $pidgey__hp.text("HP: " + response.stats[5].base_stat);
         $pidgey__weight.text("WEIGHT: " + response.weight);
+    }).fail(function (error) {
+        console.log(error);
+    });
+
+    /* Seventh pokemon */
+    $.ajax({
+
+
+        url: rattataUrl
+    }).done(function (response) {
+        console.log(response);
+        $rattata.text(response.name);
+        $normal.text(response.types[0].type.name);
+        $rattata__hp.text("HP: " + response.stats[5].base_stat);
+        $rattata__weight.text("WEIGHT: " + response.weight);
+    }).fail(function (error) {
+        console.log(error);
+    });
+
+    /* Eighth pokemon */
+    $.ajax({
+
+
+        url: fearowUrl
+    }).done(function (response) {
+        console.log(response);
+        $fearow.text(response.name);
+        $normal.text(response.types[1].type.name);
+        $flying.text(response.types[0].type.name);
+        $fearow__hp.text("HP: " + response.stats[5].base_stat);
+        $fearow__weight.text("WEIGHT: " + response.weight);
+    }).fail(function (error) {
+        console.log(error);
+    });
+
+
+    /* Ninth pokemon */
+    $.ajax({
+
+
+        url: pikachuUrl
+    }).done(function (response) {
+        console.log(response);
+        $pikachu.text(response.name);
+        $electric.text(response.types[0].type.name);
+        $pikachu__hp.text("HP: " + response.stats[5].base_stat);
+        $pikachu__weight.text("WEIGHT: " + response.weight);
+    }).fail(function (error) {
+        console.log(error);
+    });
+
+    /* Tenth pokemon */
+    $.ajax({
+
+
+        url: sandslashUrl
+    }).done(function (response) {
+        console.log(response);
+        $sandslash.text(response.name);
+        $ground.text(response.types[0].type.name);
+        $sandslash__hp.text("HP: " + response.stats[5].base_stat);
+        $sandslash__weight.text("WEIGHT: " + response.weight);
     }).fail(function (error) {
         console.log(error);
     });
