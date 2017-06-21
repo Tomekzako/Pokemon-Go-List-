@@ -1,298 +1,328 @@
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.row {
+    &::after,
+    &::before {
+        display: table;
+        content: '';
+        clear: both;
     }
-    
-    .container {
-        max-width: 1050px;
-        margin: 0 auto;
+}
+
+$columnsCount: 12;
+$breakpoint: 420px;
+@for $i from 1 through $columnsCount {
+    .col-#{$i} {
+        width: (100%/$columnsCount)*$i;
+    }
+}
+
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    @media (max-width: $breakpoint) {
+        float: none;
         width: 100%;
     }
-    
-    .row {
-        &::after,
-        &::before {
-            display: table;
-            content: '';
-            clear: both;
-        }
-    }
-    
-    $columnsCount: 12;
-    $breakpoint: 420px;
-    @for $i from 1 through $columnsCount {
-        .col-#{$i} {
-            width: (100%/$columnsCount)*$i;
-        }
-    }
-    
-    [class*='col-'] {
-        float: left;
-        min-height: 1px;
-        @media (max-width: $breakpoint) {
-            float: none;
-            width: 100%;
-        }
-    }
-    
-    body {
-        background-image: url(../images/Plain-design-pattern-dark-background-image-HD-resolution-latest-pack.jpg);
+}
+
+body {
+    background-image: url(../images/bcg.jpg);
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+/*HEADER*/
+
+header {
+    margin-top: 50px;
+    h1 {
+        text-align: right;
         font-family: 'Orbitron', sans-serif;
+        font-size: 4rem;
+        color: #fff;
+        text-shadow: 2px 2px 8px #bdaeae;
     }
-    /*HEADER*/
-    
-    header {
-        margin-top: 50px;
-        h1 {
-            text-align: right;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            color: #fff;
-            text-shadow: 2px 2px 8px #bdaeae;
+    img {
+        width: 70px;
+        margin-left: 10px;
+        margin-top: 5px;
+        animation: rotation 1s infinite;
+    }
+    @keyframes rotation {
+        15% {
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
         }
-        img {
-            width: 70px;
-            margin-left: 10px;
-            margin-top: 5px;
-            animation: rotation 1s infinite;
+        30% {
+            -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
         }
-        @keyframes rotation {
-            15% {
-                -webkit-transform: rotate(5deg);
-                transform: rotate(5deg);
-            }
-            30% {
-                -webkit-transform: rotate(15deg);
-                transform: rotate(15deg);
-            }
-            50% {
-                -webkit-transform: rotate(25deg);
-                transform: rotate(25deg);
-            }
-            65% {
-                -webkit-transform: rotate(15deg);
-                transform: rotate(15deg);
-            }
-            80% {
-                -webkit-transform: rotate(5deg);
-                transform: rotate(5deg);
-            }
-            100% {
-                -webkit-transform: rotate(-5deg);
-                transform: rotate(-5deg);
-            }
+        50% {
+            -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+        }
+        65% {
+            -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+        }
+        80% {
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+        100% {
+            -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
         }
     }
-    /*SECTION*/
-    
-    section {
-        .col6 {
-            padding: 10px;
-            .card {
-                &:hover {
-                    cursor: pointer;
-                    background-color: #563030;
-                }
-                background-color: #7d4848;
-                border: 10px solid white;
-                border-radius: 5px;
-                height: 350px;
+}
+
+
+/*SECTION*/
+
+section {
+    .col6 {
+        padding: 10px;
+        .card {
+            &:hover {
+                cursor: pointer;
+                background-color: #563030;
             }
-            .col5 {
-                padding-top: 50px;
-            }
-        }
-        .section__h1 {
-            img {
-                &:hover {
-                    -webkit-animation: move 1s ease;
-                    animation: move 1s ease;
-                    -webkit-animation-iteration-count: 1;
-                    animation-iteration-count: 1;
-                }
-            }
-        }
-        img {
-            width: 100%;
-            height: 250px;
-            margin-left: 10px;
-            padding-top: 10px;
-        }
-        h1 {
-            font-family: 'Pangolin', cursive;
-            text-align: center;
-            font-size: 3rem;
-            letter-spacing: 5px;
-            text-transform: capitalize;
-            color: white;
-        }
-        .grassBtn {
-            padding: 5px 30px;
-            background-color: lawngreen;
-            color: white;
-            text-decoration: none;
+            background-color: #7d4848;
+            border: 10px solid white;
             border-radius: 5px;
-            width: 80%;
-            display: block;
-            margin: auto;
-            text-align: center;
+            height: 350px;
         }
-        .poisonBtn {
-            @extend .grassBtn;
-            background-color: rebeccapurple;
-        }
-        .fireBtn {
-            @extend .grassBtn;
-            background-color: firebrick;
-        }
-        .waterBtn {
-            @extend .grassBtn;
-            background-color: dodgerblue;
-        }
-        .bugBtn {
-            @extend .grassBtn;
-            background-color: green;
-        }
-        .normalBtn {
-            @extend .grassBtn;
-            background-color: dimgray;
-        }
-        .flyingBtn {
-            @extend .grassBtn;
-            background: linear-gradient(#03a9f4 50%, #b9b4b4 50%);
-        }
-        .hp {
-            color: #fff;
-            font-weight: 900;
-            margin-top: 50px;
-            text-align: center;
-            letter-spacing: 2px;
-        }
-        .weight {
-            @extend .hp;
-            margin-top: 30px;
-        }
-        .bulb--hp {
-            margin-top: 30px;
+        .col5 {
+            padding-top: 50px;
         }
     }
-    
-    @-webkit-keyframes move {
-        15% {
-            -webkit-transform: translateX(5px);
-            transform: translateX(5px);
-        }
-        30% {
-            -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
-        }
-        50% {
-            -webkit-transform: translateX(3px);
-            transform: translateX(3px);
-        }
-        65% {
-            -webkit-transform: translateX(-3px);
-            transform: translateX(-3px);
-        }
-        80% {
-            -webkit-transform: translateX(2px);
-            transform: translateX(2px);
-        }
-        100% {
-            -webkit-transform: translateX(0);
-            transform: translateX(0);
-        }
-    }
-    
-    @keyframes move {
-        15% {
-            -webkit-transform: translateX(5px);
-            transform: translateX(5px);
-        }
-        30% {
-            -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
-        }
-        50% {
-            -webkit-transform: translateX(3px);
-            transform: translateX(3px);
-        }
-        65% {
-            -webkit-transform: translateX(-3px);
-            transform: translateX(-3px);
-        }
-        80% {
-            -webkit-transform: translateX(2px);
-            transform: translateX(2px);
-        }
-        100% {
-            -webkit-transform: translateX(0);
-            transform: translateX(0);
-        }
-    }
-    
-    .fullScreen {
-        position: fixed;
-        display: none;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        background-image: url(../images/Plain-design-pattern-dark-background-image-HD-resolution-latest-pack.jpg);
-        .newContainer {
-            max-width: 800px;
-            margin: 50px auto 0;
-            width: 100%;
-            border: 3px solid red;
-            background: bisque;
-            h1 {
-                font-size: 3rem;
-                text-align: center;
-                text-transform: uppercase;
-                color: chocolate;
-                padding: 20px 0;
+    .section__h1 {
+        img {
+            &:hover {
+                -webkit-animation: move 1s ease;
+                animation: move 1s ease;
+                -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
             }
         }
-        .mainImg {
-            height: 400px;
-            padding: 0 0 20px 20px;
+    }
+    img {
+        width: 100%;
+        height: 250px;
+        margin-left: 10px;
+        padding-top: 10px;
+    }
+    h1 {
+        font-family: 'Pangolin', cursive;
+        text-align: center;
+        font-size: 3rem;
+        letter-spacing: 5px;
+        text-transform: capitalize;
+        color: white;
+    }
+    .grassBtn {
+        padding: 5px 30px;
+        background-color: lawngreen;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 80%;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    .poisonBtn {
+        @extend .grassBtn;
+        background-color: rebeccapurple;
+    }
+    .fireBtn {
+        @extend .grassBtn;
+        background-color: firebrick;
+    }
+    .waterBtn {
+        @extend .grassBtn;
+        background-color: dodgerblue;
+    }
+    .bugBtn {
+        @extend .grassBtn;
+        background-color: green;
+    }
+    .normalBtn {
+        @extend .grassBtn;
+        background-color: dimgray;
+    }
+    .flyingBtn {
+        @extend .grassBtn;
+        background: linear-gradient(#03a9f4 50%, #b9b4b4 50%);
+    }
+    .hp {
+        color: #fff;
+        font-weight: 900;
+        margin-top: 50px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+    .weight {
+        @extend .hp;
+        margin-top: 30px;
+    }
+    .bulb--hp {
+        margin-top: 30px;
+    }
+}
+
+@-webkit-keyframes move {
+    15% {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30% {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50% {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65% {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80% {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes move {
+    15% {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30% {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50% {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65% {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80% {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.fullScreen {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    .newContainer {
+        max-width: 800px;
+        margin: 50px auto 0;
+        width: 100%;
+        border: 3px solid red;
+        background: bisque;
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            color: chocolate;
+            padding: 20px 0;
         }
         a {
-            text-decoration: none;
-            margin: 0 10px;
+            width: 100%;
         }
-        .btn {
-            .btn-red {
-                background-color: #E48681;
-                border-color: rgba(0, 0, 0, 0.3);
-                text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-                color: #FFF;
-            }
-            &:hover {
-                background-color: #DA4F49;
-                border-color: rgba(0, 0, 0, 0.5);
-            }
-            &:active {
-                background-color: red;
-                border-color: rgba(0, 0, 0, 0.9);
-            }
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 12px;
-            padding: 10px 30px;
-            border-radius: 5px;
-            border: 1px solid rgba(0, 0, 0, 0.3);
-            border-bottom-width: 3px;
+        .pad {
+            padding-bottom: 5px;
+        }
+    }
+    .newContainer__stats {
+        border: 5px solid chocolate;
+        border-radius: 5px;
+        margin: 20px 0;
+        padding: 10px;
+        background: goldenrod;
+        color: #fff;
+        font-size: 18px;
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            color: chocolate;
+            text-decoration: underline;
+            padding-bottom: 10px;
+        }
+        .results {
+            text-align: right;
+            font-weight: 700;
+        }
+    }
+    .mainImg {
+        height: 400px;
+        padding: 0 0 20px 20px;
+    }
+    a {
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .btn {
+        .btn-red {
             background-color: #E48681;
             border-color: rgba(0, 0, 0, 0.3);
             text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
             color: #FFF;
-            display: block;
-            width: 110px;
-            text-align: center;
-            margin: 20px auto;
         }
+        &:hover {
+            background-color: #DA4F49;
+            border-color: rgba(0, 0, 0, 0.5);
+        }
+        &:active {
+            background-color: red;
+            border-color: rgba(0, 0, 0, 0.9);
+        }
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 12px;
+        padding: 10px 30px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-bottom-width: 3px;
+        background-color: #E48681;
+        border-color: rgba(0, 0, 0, 0.3);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+        color: #FFF;
+        display: block;
+        width: 110px;
+        text-align: center;
+        margin: 20px auto;
     }
+}

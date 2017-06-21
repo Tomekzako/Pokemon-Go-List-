@@ -98,7 +98,13 @@ $(function () {
             $newH1.text(response.name);
             $('.height').text("HEIGHT: " + response.height);
             $('.newContainer__weight').text("WEIGHT: " + response.weight);
-            $('.newContainer__abilities').text("ABILITIES: " + response.abilities[0].ability.name + " " + response.abilities[1].ability.name);
+            $('.newContainer__abilities').text("ABILITIES: " + response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.speed').text(response.stats[0].base_stat);
+            $('.special-defense').text(response.stats[1].base_stat);
+            $('.special-attack').text(response.stats[2].base_stat);
+            $('.defense').text(response.stats[3].base_stat);
+            $('.attack').text(response.stats[4].base_stat);
+            $('.stats__hp').text(response.stats[5].base_stat);
             $('.newContainer__type a').addClass("poisonBtn").text(response.types[0].type.name);
             $('.newContainer__type--sec a').addClass("grassBtn").text(response.types[1].type.name);
             setImg("images/Bulbasaur.png");
