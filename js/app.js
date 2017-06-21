@@ -147,9 +147,8 @@ $(function () {
         $fire.text(ans.types[0].type.name);
         $charm__hp.text("HP: " + ans.stats[5].base_stat);
         $charm__weight.text("WEIGHT: " + ans.weight);
-        $newH1.text(ans.name);
 
-        $(".card:eq( 1 )").first().on('click', function () {
+        $(".card:eq( 1 )").on('click', function () {
             $('.fullScreen').css('display', 'block');
             $newH1.text(ans.name);
             $('.newContainer__height').text(ans.height);
@@ -181,9 +180,8 @@ $(function () {
         $water.text(ans.types[0].type.name);
         $squirtle__hp.text("HP: " + ans.stats[5].base_stat);
         $squirtle__weight.text("WEIGHT: " + ans.weight);
-        $newH1.text(ans.name);
 
-        $(".card:eq( 2 )").first().on('click', function () {
+        $(".card:eq( 2 )").on('click', function () {
             $('.fullScreen').css('display', 'block');
             $newH1.text(ans.name);
             $('.newContainer__height').text(ans.height);
@@ -195,7 +193,7 @@ $(function () {
             $('.defense').text(ans.stats[3].base_stat);
             $('.attack').text(ans.stats[4].base_stat);
             $('.stats__hp').text(ans.stats[5].base_stat);
-            $('.newContainer__type a').addClass("fireBtn").text(ans.types[0].type.name);
+            $('.newContainer__type a').addClass("waterBtn").text(ans.types[0].type.name);
             setImg("images/Squirtle.png");
         });
     }).fail(function (error) {
@@ -214,6 +212,22 @@ $(function () {
         $bug.text(response.types[0].type.name);
         $caterpie__hp.text("HP: " + response.stats[5].base_stat);
         $caterpie__weight.text("WEIGHT: " + response.weight);
+
+        $(".card:eq( 3 )").on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(response.name);
+            $('.newContainer__height').text(response.height);
+            $('.newContainer__weight').text(response.weight);
+            $('.newContainer__abilities').text(response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.speed').text(response.stats[0].base_stat);
+            $('.special-defense').text(response.stats[1].base_stat);
+            $('.special-attack').text(response.stats[2].base_stat);
+            $('.defense').text(response.stats[3].base_stat);
+            $('.attack').text(response.stats[4].base_stat);
+            $('.stats__hp').text(response.stats[5].base_stat);
+            $('.newContainer__type a').addClass("bugBtn").text(response.types[0].type.name);
+            setImg("images/caterpie.png");
+        });
     }).fail(function (error) {
         console.log(error);
     });
@@ -231,6 +245,23 @@ $(function () {
         $bug.text(response.types[1].type.name);
         $weedle__hp.text("HP: " + response.stats[5].base_stat);
         $weedle__weight.text("WEIGHT: " + response.weight);
+
+        $(".card:eq( 4 )").on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(response.name);
+            $('.newContainer__height').text(response.height);
+            $('.newContainer__weight').text(response.weight);
+            $('.newContainer__abilities').text(response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.speed').text(response.stats[0].base_stat);
+            $('.special-defense').text(response.stats[1].base_stat);
+            $('.special-attack').text(response.stats[2].base_stat);
+            $('.defense').text(response.stats[3].base_stat);
+            $('.attack').text(response.stats[4].base_stat);
+            $('.stats__hp').text(response.stats[5].base_stat);
+            $('.newContainer__type a').addClass("bugBtn").text(response.types[1].type.name);
+            $('.newContainer__type--sec a').addClass("poisonBtn").text(response.types[0].type.name);
+            setImg("images/Weedle.png");
+        });
     }).fail(function (error) {
         console.log(error);
     });
@@ -247,6 +278,24 @@ $(function () {
         $flying.text(response.types[1].type.name);
         $pidgey__hp.text("HP: " + response.stats[5].base_stat);
         $pidgey__weight.text("WEIGHT: " + response.weight);
+
+        $(".card:eq( 5 )").on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(response.name);
+            $('.newContainer__height').text(response.height);
+            $('.newContainer__weight').text(response.weight);
+            $('.newContainer__abilities').text(response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.speed').text(response.stats[0].base_stat);
+            $('.special-defense').text(response.stats[1].base_stat);
+            $('.special-attack').text(response.stats[2].base_stat);
+            $('.defense').text(response.stats[3].base_stat);
+            $('.attack').text(response.stats[4].base_stat);
+            $('.stats__hp').text(response.stats[5].base_stat);
+            $('.newContainer__type a').addClass("flyingBtn").text(response.types[0].type.name);
+            $('.newContainer__type--sec a').addClass("normalBtn").text(response.types[1].type.name);
+            setImg("images/pidgey.png");
+        });
+
     }).fail(function (error) {
         console.log(error);
     });
@@ -262,6 +311,23 @@ $(function () {
         $normal.text(response.types[0].type.name);
         $rattata__hp.text("HP: " + response.stats[5].base_stat);
         $rattata__weight.text("WEIGHT: " + response.weight);
+
+        $(".card:eq( 6 )").on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(response.name);
+            $('.newContainer__height').text(response.height);
+            $('.newContainer__weight').text(response.weight);
+            $('.newContainer__abilities').text(response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.speed').text(response.stats[0].base_stat);
+            $('.special-defense').text(response.stats[1].base_stat);
+            $('.special-attack').text(response.stats[2].base_stat);
+            $('.defense').text(response.stats[3].base_stat);
+            $('.attack').text(response.stats[4].base_stat);
+            $('.stats__hp').text(response.stats[5].base_stat);
+            $('.newContainer__type a').addClass("normalBtn").text(response.types[0].type.name);
+            setImg("images/Rattata.png");
+        });
+
     }).fail(function (error) {
         console.log(error);
     });
@@ -278,6 +344,24 @@ $(function () {
         $flying.text(response.types[0].type.name);
         $fearow__hp.text("HP: " + response.stats[5].base_stat);
         $fearow__weight.text("WEIGHT: " + response.weight);
+
+        $(".card:eq( 7 )").on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(response.name);
+            $('.newContainer__height').text(response.height);
+            $('.newContainer__weight').text(response.weight);
+            $('.newContainer__abilities').text(response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.speed').text(response.stats[0].base_stat);
+            $('.special-defense').text(response.stats[1].base_stat);
+            $('.special-attack').text(response.stats[2].base_stat);
+            $('.defense').text(response.stats[3].base_stat);
+            $('.attack').text(response.stats[4].base_stat);
+            $('.stats__hp').text(response.stats[5].base_stat);
+            $('.newContainer__type a').addClass("flyingBtn").text(response.types[0].type.name);
+            $('.newContainer__type--sec a').addClass("normalBtn").text(response.types[1].type.name);
+            setImg("images/Fearow.png");
+        });
+
     }).fail(function (error) {
         console.log(error);
     });
@@ -294,6 +378,23 @@ $(function () {
         $electric.text(response.types[0].type.name);
         $pikachu__hp.text("HP: " + response.stats[5].base_stat);
         $pikachu__weight.text("WEIGHT: " + response.weight);
+
+        $(".card:eq( 8 )").on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(response.name);
+            $('.newContainer__height').text(response.height);
+            $('.newContainer__weight').text(response.weight);
+            $('.newContainer__abilities').text(response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.speed').text(response.stats[0].base_stat);
+            $('.special-defense').text(response.stats[1].base_stat);
+            $('.special-attack').text(response.stats[2].base_stat);
+            $('.defense').text(response.stats[3].base_stat);
+            $('.attack').text(response.stats[4].base_stat);
+            $('.stats__hp').text(response.stats[5].base_stat);
+            $('.newContainer__type a').addClass("electricBtn").text(response.types[0].type.name);
+            setImg("images/Pikachu.png");
+        });
+
     }).fail(function (error) {
         console.log(error);
     });
@@ -309,6 +410,23 @@ $(function () {
         $ground.text(response.types[0].type.name);
         $sandslash__hp.text("HP: " + response.stats[5].base_stat);
         $sandslash__weight.text("WEIGHT: " + response.weight);
+
+        $(".card:eq( 9 )").on('click', function () {
+            $('.fullScreen').css('display', 'block');
+            $newH1.text(response.name);
+            $('.newContainer__height').text(response.height);
+            $('.newContainer__weight').text(response.weight);
+            $('.newContainer__abilities').text(response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.speed').text(response.stats[0].base_stat);
+            $('.special-defense').text(response.stats[1].base_stat);
+            $('.special-attack').text(response.stats[2].base_stat);
+            $('.defense').text(response.stats[3].base_stat);
+            $('.attack').text(response.stats[4].base_stat);
+            $('.stats__hp').text(response.stats[5].base_stat);
+            $('.newContainer__type a').addClass("groundBtn").text(response.types[0].type.name);
+            setImg("images/Sandslash.png");
+        });
+
     }).fail(function (error) {
         console.log(error);
     });
