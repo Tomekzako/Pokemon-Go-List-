@@ -1,15 +1,15 @@
 $(function () {
 
-    var bulbasaurUrl = 'http://pokeapi.co/api/v2/pokemon/1/';
-    var charmanderUrl = 'http://pokeapi.co/api/v2/pokemon/4/';
-    var squirtleUrl = 'http://pokeapi.co/api/v2/pokemon/7/';
-    var caterpieUrl = 'http://pokeapi.co/api/v2/pokemon/10/';
-    var weedleUrl = 'http://pokeapi.co/api/v2/pokemon/13/';
-    var pidgeyUrl = 'http://pokeapi.co/api/v2/pokemon/16/';
-    var rattataUrl = 'http://pokeapi.co/api/v2/pokemon/19/';
-    var fearowUrl = 'http://pokeapi.co/api/v2/pokemon/22/';
-    var pikachuUrl = 'http://pokeapi.co/api/v2/pokemon/25/';
-    var sandslashUrl = 'http://pokeapi.co/api/v2/pokemon/28/';
+    var bulbasaurUrl = 'https://pokeapi.co/api/v2/pokemon/1/';
+    var charmanderUrl = 'https://pokeapi.co/api/v2/pokemon/4/';
+    var squirtleUrl = 'https://pokeapi.co/api/v2/pokemon/7/';
+    var caterpieUrl = 'https://pokeapi.co/api/v2/pokemon/10/';
+    var weedleUrl = 'https://pokeapi.co/api/v2/pokemon/13/';
+    var pidgeyUrl = 'https://pokeapi.co/api/v2/pokemon/16/';
+    var rattataUrl = 'https://pokeapi.co/api/v2/pokemon/19/';
+    var fearowUrl = 'https://pokeapi.co/api/v2/pokemon/22/';
+    var pikachuUrl = 'https://pokeapi.co/api/v2/pokemon/25/';
+    var sandslashUrl = 'https://pokeapi.co/api/v2/pokemon/28/';
 
 
     let $section__h1 = $('.section__h1');
