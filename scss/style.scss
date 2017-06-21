@@ -173,7 +173,7 @@ section {
     }
     .electricBtn {
         @extend .grassBtn;
-        background-color: yellow;
+        background-color: #d2d200;
     }
     .hp {
         color: #fff;
@@ -373,7 +373,7 @@ section {
     .fullScreen {
         overflow: scroll;
         .newContainer {
-            margin: 20px auto;
+            margin: 0px auto;
             h1 {
                 font-size: 2rem;
                 padding: 10px 0;
