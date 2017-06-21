@@ -98,14 +98,14 @@ $(function () {
         $('.newContainer__type a').removeAttr('class').empty();
         $('.newContainer__type--sec a').removeAttr('class').empty();
     });
-    
-//    $('.fullScreen').on('click', function () {
-//        $('.fullScreen').css('display', 'none');
-//        $('.newContainer__type a').removeAttr('class').empty();
-//        $('.newContainer__type--sec a').removeAttr('class').empty();
-//    });
-    
-    
+
+    $('.fullScreen').on('click', function () {
+        $('.fullScreen').css('display', 'none');
+        $('.newContainer__type a').removeAttr('class').empty();
+        $('.newContainer__type--sec a').removeAttr('class').empty();
+    });
+
+
 
     /* First pokemon */
     $.ajax({
