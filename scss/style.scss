@@ -373,7 +373,7 @@ section {
     .fullScreen {
         overflow: scroll;
         .newContainer {
-            margin: 20px auto 0;
+            margin: 20px auto;
             h1 {
                 font-size: 2rem;
                 padding: 10px 0;
@@ -390,6 +390,9 @@ section {
         }
         .pad .col-4 {
             width: 60%;
+        }
+        .newContainer__btn {
+            display: none;
         }
     }
 }
