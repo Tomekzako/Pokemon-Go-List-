@@ -343,27 +343,53 @@ section {
     }
 }
 
-@media(max-width: $breakpoint){
-    body{
+.inner-container {
+    width: 100%;
+    flex-direction: row;
+}
+
+@media(max-width: $breakpoint) {
+    body {
         background-size: contain;
     }
-    header{
-         img{
-        display: none;
+    header {
+        img {
+            display: none;
         }
-        h1{
+        h1 {
             font-size: 3rem;
             text-align: center;
         }
     }
-    
-    section{
-        img{
+    section {
+        img {
             height: 230px;
             padding-top: 5px;
         }
-        .col5{
+        .col5 {
             display: none;
+        }
+    }
+    .fullScreen {
+        overflow: scroll;
+        .newContainer {
+            margin: 20px auto 0;
+            h1 {
+                font-size: 2rem;
+                padding: 10px 0;
+            }
+        }
+        .mainImg {
+            height: 300px;
+        }
+        .inner-container {
+            display: flex;
+        }
+        a {
+            margin: 0px -5px;
+        }
+        .pad .col-4 {
+            width: 60%;
         }
     }
 }

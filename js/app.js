@@ -97,7 +97,15 @@ $(function () {
         $('.fullScreen').css('display', 'none');
         $('.newContainer__type a').removeAttr('class').empty();
         $('.newContainer__type--sec a').removeAttr('class').empty();
-    })
+    });
+    
+//    $('.fullScreen').on('click', function () {
+//        $('.fullScreen').css('display', 'none');
+//        $('.newContainer__type a').removeAttr('class').empty();
+//        $('.newContainer__type--sec a').removeAttr('class').empty();
+//    });
+    
+    
 
     /* First pokemon */
     $.ajax({
@@ -105,7 +113,7 @@ $(function () {
 
         url: bulbasaurUrl
     }).done(function (response) {
-        console.log(response);
+
         $bulb.text(response.name);
         $grass.text(response.types[1].type.name);
         $poison.text(response.types[0].type.name);
@@ -142,7 +150,7 @@ $(function () {
 
         url: charmanderUrl
     }).done(function (ans) {
-        console.log(ans);
+
         $charm.text(ans.name);
         $fire.text(ans.types[0].type.name);
         $charm__hp.text("HP: " + ans.stats[5].base_stat);
@@ -175,7 +183,6 @@ $(function () {
 
         url: squirtleUrl
     }).done(function (ans) {
-        console.log(ans);
         $squirtle.text(ans.name);
         $water.text(ans.types[0].type.name);
         $squirtle__hp.text("HP: " + ans.stats[5].base_stat);
@@ -207,7 +214,6 @@ $(function () {
 
         url: caterpieUrl
     }).done(function (response) {
-        console.log(response);
         $caterpie.text(response.name);
         $bug.text(response.types[0].type.name);
         $caterpie__hp.text("HP: " + response.stats[5].base_stat);
@@ -239,7 +245,7 @@ $(function () {
 
         url: weedleUrl
     }).done(function (response) {
-        console.log(response);
+
         $weedle.text(response.name);
         $poison.text(response.types[0].type.name);
         $bug.text(response.types[1].type.name);
@@ -272,7 +278,7 @@ $(function () {
 
         url: pidgeyUrl
     }).done(function (response) {
-        console.log(response);
+
         $pidgey.text(response.name);
         $normal.text(response.types[0].type.name);
         $flying.text(response.types[1].type.name);
@@ -306,7 +312,7 @@ $(function () {
 
         url: rattataUrl
     }).done(function (response) {
-        console.log(response);
+
         $rattata.text(response.name);
         $normal.text(response.types[0].type.name);
         $rattata__hp.text("HP: " + response.stats[5].base_stat);
@@ -338,7 +344,7 @@ $(function () {
 
         url: fearowUrl
     }).done(function (response) {
-        console.log(response);
+
         $fearow.text(response.name);
         $normal.text(response.types[1].type.name);
         $flying.text(response.types[0].type.name);
@@ -373,7 +379,7 @@ $(function () {
 
         url: pikachuUrl
     }).done(function (response) {
-        console.log(response);
+
         $pikachu.text(response.name);
         $electric.text(response.types[0].type.name);
         $pikachu__hp.text("HP: " + response.stats[5].base_stat);
@@ -405,7 +411,7 @@ $(function () {
 
         url: sandslashUrl
     }).done(function (response) {
-        console.log(response);
+
         $sandslash.text(response.name);
         $ground.text(response.types[0].type.name);
         $sandslash__hp.text("HP: " + response.stats[5].base_stat);
