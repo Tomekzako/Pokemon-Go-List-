@@ -77,6 +77,8 @@ $(function () {
 
     $return.on('click', function () {
         $('.fullScreen').css('display', 'none');
+        $('.newContainer__type a').removeAttr('class').empty();
+        $('.newContainer__type--sec a').removeAttr('class').empty();
     })
 
     /* First pokemon */
@@ -96,9 +98,9 @@ $(function () {
         $card.first().on('click', function () {
             $('.fullScreen').css('display', 'block');
             $newH1.text(response.name);
-            $('.height').text("HEIGHT: " + response.height);
-            $('.newContainer__weight').text("WEIGHT: " + response.weight);
-            $('.newContainer__abilities').text("ABILITIES: " + response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
+            $('.newContainer__height').text(response.height);
+            $('.newContainer__weight').text(response.weight);
+            $('.newContainer__abilities').text(response.abilities[0].ability.name + ", " + response.abilities[1].ability.name);
             $('.speed').text(response.stats[0].base_stat);
             $('.special-defense').text(response.stats[1].base_stat);
             $('.special-attack').text(response.stats[2].base_stat);
@@ -133,6 +135,15 @@ $(function () {
             $('.fullScreen').css('display', 'block');
             $newH1.text(ans.name);
             $('.height').text("HEIGHT: " + ans.height);
+            $('.newContainer__weight').text("WEIGHT: " + ans.weight);
+            $('.newContainer__abilities').text("ABILITIES: " + ans.abilities[0].ability.name + ", " + ans.abilities[1].ability.name);
+            $('.speed').text(ans.stats[0].base_stat);
+            $('.special-defense').text(ans.stats[1].base_stat);
+            $('.special-attack').text(ans.stats[2].base_stat);
+            $('.defense').text(ans.stats[3].base_stat);
+            $('.attack').text(ans.stats[4].base_stat);
+            $('.stats__hp').text(ans.stats[5].base_stat);
+            $('.newContainer__type a').addClass("fireBtn").text(ans.types[0].type.name);
             setImg("images/charmander.png");
         });
 

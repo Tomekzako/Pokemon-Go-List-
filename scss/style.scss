@@ -45,13 +45,13 @@ body {
 /*HEADER*/
 
 header {
-    margin-top: 50px;
+    margin-top: 30px;
     h1 {
         text-align: right;
         font-family: 'Orbitron', sans-serif;
-        font-size: 4rem;
-        color: #fff;
-        text-shadow: 2px 2px 8px #bdaeae;
+        font-size: 5rem;
+        color: darkred;
+        text-shadow: 2px 2px 8px #000000;
     }
     img {
         width: 70px;
@@ -96,10 +96,10 @@ section {
         .card {
             &:hover {
                 cursor: pointer;
-                background-color: #563030;
+                background-color: #008c3e;
             }
-            background-color: #7d4848;
-            border: 10px solid white;
+            background-color: mediumseagreen;
+            border: 10px solid maroon;
             border-radius: 5px;
             height: 350px;
         }
@@ -249,13 +249,13 @@ section {
         max-width: 800px;
         margin: 50px auto 0;
         width: 100%;
-        border: 3px solid red;
-        background: bisque;
+        border: 15px solid darkred;
+        background: azure;
         h1 {
             font-size: 3rem;
             text-align: center;
             text-transform: uppercase;
-            color: chocolate;
+            color: maroon;
             padding: 20px 0;
         }
         a {
@@ -263,7 +263,19 @@ section {
         }
         .pad {
             padding-bottom: 5px;
+            .col-6,
+            .col-4,
+            p {
+                font-weight: 800;
+                color: maroon;
+            }
         }
+    }
+    .newContainer__height,
+    .newContainer__weight,
+    .newContainer__abilities {
+        color: black !important;
+        font-weight: 800;
     }
     .newContainer__stats {
         border: 5px solid chocolate;
@@ -272,7 +284,7 @@ section {
         padding: 10px;
         background: goldenrod;
         color: #fff;
-        font-size: 18px;
+        font-size: 17px;
         h2 {
             font-size: 2rem;
             text-align: center;
@@ -323,6 +335,6 @@ section {
         display: block;
         width: 110px;
         text-align: center;
-        margin: 20px auto;
+        margin: 10px auto;
     }
 }
